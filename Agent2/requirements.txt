@@ -1,0 +1,7 @@
+# Add Python dependencies here
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+joblib
