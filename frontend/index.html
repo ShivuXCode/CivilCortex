@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivilCortex - Enterprise Maintenance Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#0f172a',      // Navy Blue
+                        secondary: '#334155',    // Slate Gray
+                        accent: '#f97316',       // Safety Orange
+                        background: '#f1f5f9',   // Very Light Slate
+                        surface: '#ffffff',
+                        border: '#e2e8f0',
+                        danger: '#ef4444',
+                        warning: '#f59e0b',
+                        success: '#10b981'
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-secondary antialiased font-sans h-screen overflow-hidden flex">
+
+    <!-- Sidebar (Navy Blue) -->
+    <aside class="w-64 bg-primary text-white flex flex-col h-full shadow-xl z-20">
+        <div class="h-20 flex items-center px-6 border-b border-slate-700/50">
+            <div class="w-8 h-8 bg-accent rounded flex items-center justify-center text-white font-bold text-lg mr-3 shadow-lg">C</div>
+            <div>
+                <h1 class="text-xl font-bold tracking-tight leading-tight text-white">CivilCortex</h1>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Enterprise System</p>
+            </div>
+        </div>
+        
+        <nav class="flex-1 py-6 px-4 space-y-2 overflow-y-auto">
+            <a href="#" class="flex items-center gap-3 px-4 py-3 bg-white/10 text-white rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                AI Diagnostics
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                Infrastructure DB
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                Site Operations
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 rounded-lg font-medium transition-colors">
+                <svg class="w-5 h-5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                Safety & Compliance
+            </a>
+        </nav>
+
+        <div class="p-6 border-t border-slate-700/50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center font-bold">JD</div>
+                <div>
+                    <p class="text-sm font-semibold text-white">System Admin</p>
+                    <p class="text-xs text-slate-400">Node: CC-992</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden">
+        
+        <!-- Top Bar -->
+        <header class="h-20 bg-surface border-b border-border flex items-center justify-between px-8 z-10 shadow-sm">
+            <div>
+                <h2 class="text-2xl font-bold text-primary tracking-tight">Agentic AI Decision System</h2>
+                <p class="text-sm text-slate-500 font-medium">Module 3 Maintenance Orchestration</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-background px-4 py-2 rounded-lg border border-border text-sm font-medium">
+                    <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+                    API Connected
+                </div>
+            </div>
+        </header>
+
+        <!-- Scrollable Dashboard -->
+        <div class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-[1600px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-8 pb-12">
+                
+                <!-- Left Column: Inputs (Module 1 & 2) -->
+                <div class="xl:col-span-4 space-y-6">
+                    <form id="analysis-form" class="space-y-6">
+                        
+                        <!-- Module 1 Card -->
+                        <div class="bg-surface rounded-xl border border-border shadow-card overflow-hidden">
+                            <div class="bg-slate-50 px-6 py-4 border-b border-border">
+                                <h3 class="font-bold text-primary flex items-center gap-2 uppercase tracking-wide text-sm">
+                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                    Module 1: Infra Cognition
+                                </h3>
+                            </div>
+                            <div class="p-6 space-y-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Crack Type</label>
+                                    <select id="in-crack-type" class="w-full rounded-lg border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                        <option value="longitudinal">Longitudinal</option>
+                                        <option value="transverse">Transverse</option>
+                                        <option value="hairline">Hairline</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Defect Type</label>
+                                    <select id="in-defect" class="w-full rounded-lg border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                        <option value="spalling">Spalling</option>
+                                        <option value="corrosion">Corrosion</option>
+                                        <option value="delamination">Delamination</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Severity</label>
+                                        <select id="in-severity" class="w-full rounded-lg border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                            <option value="high">High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Location</label>
+                                        <input type="text" id="in-location" value="Pillar" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 2 Card -->
+                        <div class="bg-surface rounded-xl border border-border shadow-card overflow-hidden">
+                            <div class="bg-slate-50 px-6 py-4 border-b border-border">
+                                <h3 class="font-bold text-primary flex items-center gap-2 uppercase tracking-wide text-sm">
+                                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                    Module 2: Construction Analytics
+                                </h3>
+                            </div>
+                            <div class="p-6 space-y-5">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Helmet (%)</label>
+                                        <input type="number" id="in-helmet" value="70" min="0" max="100" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Vest (%)</label>
+                                        <input type="number" id="in-vest" value="65" min="0" max="100" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Exp. Prog. (%)</label>
+                                        <input type="number" id="in-expected" value="80" min="0" max="100" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Act. Prog. (%)</label>
+                                        <input type="number" id="in-actual" value="60" min="0" max="100" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Eqp. Util. (%)</label>
+                                        <input type="number" id="in-utilization" value="45" min="0" max="100" class="w-full rounded-lg border border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-secondary uppercase tracking-wider mb-2">Delay Risk</label>
+                                        <select id="in-delay" class="w-full rounded-lg border-border bg-background py-2.5 px-3 text-sm font-medium focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-shadow">
+                                            <option value="high">High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="btn-analyze" class="w-full bg-primary hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all flex justify-center items-center gap-3 transform active:scale-[0.98]">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            EXECUTE MODULE 3 AGENTS
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right Column: Outputs (Module 3) -->
+                <div class="xl:col-span-8 flex flex-col h-full">
+                    
+                    <!-- Loading State -->
+                    <div id="loading-state" class="hidden flex-1 flex flex-col items-center justify-center p-12 bg-surface rounded-xl border border-border shadow-card h-full">
+                        <div class="relative w-20 h-20 mb-8">
+                            <div class="absolute inset-0 border-4 border-slate-100 rounded-full"></div>
+                            <div class="absolute inset-0 border-4 border-primary rounded-full border-t-transparent animate-spin"></div>
+                            <svg class="absolute inset-0 m-auto w-8 h-8 text-primary animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Processing Agent Network</h3>
+                        <p class="text-sm text-slate-500 max-w-md text-center">Data is passing through Condition, Risk, Priority, Planning, Resource, and LLM Agents in real-time...</p>
+                    </div>
+
+                    <!-- Results State -->
+                    <div id="results-container" class="opacity-30 pointer-events-none transition-opacity duration-700 flex flex-col gap-6">
+                        
+                        <!-- Top Row: Core Metrics -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            
+                            <!-- Agent 1: Condition -->
+                            <div class="bg-surface rounded-xl border border-border p-6 shadow-card flex flex-col justify-between">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Agent 1: Condition Assessment</p>
+                                <div class="flex items-baseline gap-2 mb-2">
+                                    <span id="out-health-score" class="text-5xl font-extrabold text-primary tracking-tighter">--</span>
+                                    <span class="text-sm font-semibold text-slate-400">/ 100</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                                    <p class="text-xs font-bold text-slate-500 uppercase">Health Score</p>
+                                    <span id="out-condition" class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wide">--</span>
+                                </div>
+                            </div>
+
+                            <!-- Agent 2: Risk -->
+                            <div class="bg-surface rounded-xl border border-border p-6 shadow-card flex flex-col justify-between">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Agent 2: Construction Risk</p>
+                                <div class="flex items-baseline gap-2 mb-2">
+                                    <span id="out-risk-score" class="text-5xl font-extrabold text-primary tracking-tighter">--</span>
+                                    <span class="text-sm font-semibold text-slate-400">/ 100</span>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                                    <p class="text-xs font-bold text-slate-500 uppercase">Risk Level</p>
+                                    <span id="out-risk-level" class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wide">--</span>
+                                </div>
+                            </div>
+
+                            <!-- Agent 3: Priority -->
+                            <div class="bg-surface rounded-xl border border-border p-6 shadow-card flex flex-col justify-between bg-gradient-to-br from-slate-50 to-white">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Agent 3: Priority Matrix</p>
+                                <div class="flex-1 flex items-center">
+                                    <span id="out-priority" class="inline-block px-4 py-2 rounded-lg text-lg font-extrabold bg-slate-200 text-slate-700 uppercase tracking-widest border border-slate-300">
+                                        STANDBY
+                                    </span>
+                                </div>
+                                <p class="text-xs font-bold text-slate-400 mt-4 uppercase">Determines repair urgency</p>
+                            </div>
+                        </div>
+
+                        <!-- Middle Row: Planning & Resources -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            
+                            <!-- Agent 4: Maintenance Planning -->
+                            <div class="bg-surface rounded-xl border border-border p-6 shadow-card">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Agent 4: Maintenance Protocol</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shrink-0">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-slate-500 uppercase mb-1">Prescribed Action</p>
+                                        <h3 id="out-action" class="text-xl font-bold text-primary">Awaiting Analysis...</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Agent 5: Resource Optimization -->
+                            <div class="bg-surface rounded-xl border border-border p-6 shadow-card">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Agent 5: Resource Allocation</p>
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="bg-background rounded-lg p-3 border border-border text-center">
+                                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">CapEx Estimate</p>
+                                        <p id="out-cost" class="text-lg font-bold text-slate-900">--</p>
+                                    </div>
+                                    <div class="bg-background rounded-lg p-3 border border-border text-center">
+                                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Specialists</p>
+                                        <p id="out-workers" class="text-lg font-bold text-slate-900">--</p>
+                                    </div>
+                                    <div class="bg-background rounded-lg p-3 border border-border text-center">
+                                        <p class="text-[10px] font-bold text-slate-500 uppercase mb-1">Timeline</p>
+                                        <p id="out-days" class="text-lg font-bold text-slate-900">--</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Bottom Row: Agent 6 LLM -->
+                        <div class="bg-primary text-white rounded-xl shadow-xl overflow-hidden relative border border-slate-700">
+                            <!-- Subtle grid pattern overlay -->
+                            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+                            
+                            <div class="relative p-8">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center border border-white/20">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg leading-tight">Agent 6: LLM Decision Engine</h3>
+                                        <p class="text-[11px] text-slate-400 uppercase tracking-widest font-semibold">Final Engineering Recommendation</p>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-900/50 rounded-lg p-6 border border-slate-700/50 backdrop-blur-sm">
+                                    <p id="out-llm" class="text-base text-slate-200 leading-relaxed font-medium">
+                                        The system is currently in standby mode. Awaiting data ingestion from Module 1 and Module 2 to synthesize maintenance strategies.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
